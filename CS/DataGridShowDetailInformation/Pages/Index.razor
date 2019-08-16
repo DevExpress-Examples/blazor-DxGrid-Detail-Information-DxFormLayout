@@ -24,7 +24,7 @@ else
     <div style="display:flex;">
         <div style="width:350px;">
             <DxDataGrid Data=@forecasts CssClass="MainGrid" AllowDataRowSelection="false" ShowPager="false" ShowFilterRow=false>
-                <DxDataGridDateEditColumn Field=@nameof(WeatherForecast.Date) Width="200px">
+                <DxDataGridDateEditColumn Field=@nameof(WeatherForecast.Date) Width="200px" DisplayFormatString="MM/dd/yyyy">
                 </DxDataGridDateEditColumn>
                 <DxDataGridColumn Field=@nameof(WeatherForecast.Date) Width="150px" Caption="#">
                     <DisplayTemplate>
@@ -67,7 +67,7 @@ else
     forecasts;
     WeatherForecast forecast;
     string caption;
-    protected override async Task OnInitAsync()
+    protected override async Task OnInitializedAsync()
     {
         forecasts = await ForecastService.GetForecastAsync();
     }

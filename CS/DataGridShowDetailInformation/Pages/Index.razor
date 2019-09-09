@@ -23,7 +23,7 @@ else
     <p>Show forecast for the specific date:</p>
     <div style="display:flex;">
         <div style="width:350px;">
-            <DxDataGrid Data=@forecasts CssClass="MainGrid" AllowDataRowSelection="false" ShowPager="false" ShowFilterRow=false>
+            <DxDataGrid Data=@forecasts CssClass="MainGrid" SelectionMode="@DataGridSelectionMode.None" ShowPager="false" ShowFilterRow=false>
                 <DxDataGridDateEditColumn Field=@nameof(WeatherForecast.Date) Width="200px" DisplayFormatString="MM/dd/yyyy">
                 </DxDataGridDateEditColumn>
                 <DxDataGridColumn Field=@nameof(WeatherForecast.Date) Width="150px" Caption="#">

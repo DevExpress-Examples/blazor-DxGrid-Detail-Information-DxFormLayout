@@ -24,7 +24,7 @@ else
     <div style="display:flex;">
         <div style="width:350px;">
             <DxDataGrid Data=@forecasts CssClass="MainGrid" SelectionMode="@DataGridSelectionMode.None" ShowPager="false" ShowFilterRow=false>
-                <DxDataGridDateEditColumn Field=@nameof(WeatherForecast.Date) Width="200px" DisplayFormatString="MM/dd/yyyy">
+                <DxDataGridDateEditColumn Field=@nameof(WeatherForecast.Date) Width="200px" DisplayFormat="MM/dd/yyyy">
                 </DxDataGridDateEditColumn>
                 <DxDataGridColumn Field=@nameof(WeatherForecast.Date) Width="150px" Caption="#">
                     <DisplayTemplate>

@@ -11,4 +11,6 @@
 
 ### Blazor Data Grid - How to show a detail infromation in DxFormLayout
 
+The Data Grid was moved to maintenance support mode. No new features/capabilities will be added to this component. We recommend that you [migrate](https://docs.devexpress.com/Blazor/403162/grid/migrate-from-data-grid-to-grid) to the [Grid](https://docs.devexpress.com/Blazor/403143/grid) component. 
+
 This example illustrates how to create DxDataGrid for Blazor, add a template column with a button and show some detail information about the current record in DxFormLayout.

@@ -1,5 +1,3 @@
-using System;
-
 namespace DataGridShowDetailInformation.Data
 {
     public class WeatherForecast
@@ -10,6 +8,6 @@ namespace DataGridShowDetailInformation.Data
 
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
-        public string Summary { get; set; }
+        public string? Summary { get; set; }
     }
 }

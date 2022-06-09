@@ -1,25 +1,23 @@
 ﻿@page "/"
 @inject WeatherForecastService ForecastService
 @using DataGridShowDetailInformation.Data
+
 <style>
     .DetailFormLayout {
         width: 270px;
     }
-
-        .DetailFormLayout .dxbs-fl-gd.col-md-12 {
-            margin: 0px;
-        }
-
+    .DetailFormLayout .dxbs-fl-gd.col-md-12 {
+        margin: 0px;
+    }
     .MainGrid th {
         pointer-events: none;
     }
 </style>
-@if (forecasts == null)
-{
+
+@if (forecasts == null) {
     <h1>Loading...</h1>
 }
-else
-{
+else {
     <p>Show forecast for the specific date:</p>
     <div style="display:flex;">
         <div style="width:350px;">
@@ -36,8 +34,7 @@ else
                 </DxDataGridColumn>
             </DxDataGrid>
         </div>
-        @if (forecast != null)
-        {
+        @if (forecast != null) {
 
             <DxFormLayout CssClass="DetailFormLayout">
                 <DxFormLayoutGroup Caption=@caption>
@@ -62,18 +59,16 @@ else
     </div>
 }
 
-@functions {
-    List<WeatherForecast>
-    forecasts;
-    WeatherForecast forecast;
-    string caption;
-    protected override async Task OnInitializedAsync()
-    {
+@code {
+    List<WeatherForecast>? forecasts;
+    WeatherForecast? forecast;
+    string? caption;
+    protected override async Task OnInitializedAsync() {
         forecasts = await ForecastService.GetForecastAsync();
     }
-    void ShowDetail(DateTime date)
-    {
+    void ShowDetail(DateTime date) {
         forecast = forecasts.Where(m => m.Date == date).FirstOrDefault();
         caption = "Forecast for " + forecast.Date.ToShortDateString();
     }
 }
+

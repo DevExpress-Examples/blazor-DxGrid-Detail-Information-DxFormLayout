@@ -1,0 +1,75 @@
+﻿@page "/"
+
+@inject WeatherForecastService ForecastService
+@using GridShowDetailInformation.Data
+
+<style>
+    .DetailFormLayout {
+        width: 270px;
+    }
+    .DetailFormLayout .dxbs-fl-gd.col-md-12 {
+        margin: 0px;
+    }
+    .MainGrid th {
+        pointer-events: none;
+    }
+</style>
+
+@if (forecasts == null) {
+    <h1>Loading...</h1>
+}
+else {
+    <p>Show forecast for the specific date:</p>
+    <div style="display:flex;">
+        <div style="width:350px;">
+            <DxGrid Data=@forecasts CssClass="MainGrid">
+                <Columns>
+                    <DxGridDataColumn FieldName="Date" Width="200px" DisplayFormat="MM/dd/yyyy"></DxGridDataColumn>
+                    <DxGridDataColumn FieldName="Date" Caption="Details">
+                        <CellDisplayTemplate>
+                           <a class="d-block text-left" href="javascript:;" @onclick="() => ShowDetails(context)">Show Details</a>
+                        </CellDisplayTemplate>
+                    </DxGridDataColumn>
+                </Columns>
+
+            </DxGrid>
+        </div>
+        @if (forecast != null) {
+
+            <DxFormLayout CssClass="DetailFormLayout">
+                <DxFormLayoutGroup Caption=@caption>
+                    <DxFormLayoutItem Caption="Temp. (C):" ColSpanMd="12">
+                        <Template>
+                            @forecast.TemperatureC
+                        </Template>
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Temp. (F):" ColSpanMd="12">
+                        <Template>
+                            @forecast.TemperatureF
+                        </Template>
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Summary:" ColSpanMd="12">
+                        <Template>
+                            @forecast.Summary
+                        </Template>
+                    </DxFormLayoutItem>
+                </DxFormLayoutGroup>
+            </DxFormLayout>
+        }
+    </div>
+}
+
+@code {
+    List<WeatherForecast>? forecasts;
+    WeatherForecast? forecast;
+    string? caption;
+    protected override async Task OnInitializedAsync() {
+        forecasts = await ForecastService.GetForecastAsync();
+    }
+
+    public void ShowDetails(GridDataColumnCellDisplayTemplateContext context) {
+        forecast = forecasts.Where(e => e.Date == (DateTime)context.Value).FirstOrDefault();
+        caption = "Forecast for " + forecast.Date.ToShortDateString();
+    }
+}
+

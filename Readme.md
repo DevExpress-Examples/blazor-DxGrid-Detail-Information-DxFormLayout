@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 <!-- default file list -->
-*Files to look at*:
+#### Files to look at:
 
 * [Index.razor](./CS/GridShowDetailInformation/Pages/Index.razor)
 <!-- default file list end -->
@@ -12,3 +12,7 @@
 ### Blazor Grid - How to show a detail information in DxFormLayout
 
 This example demonstrates how to add the [Blazor Grid](https://docs.devexpress.com/Blazor/403143/grid) to an application and create a template grid column that shows the **Show Details** link. Users can click this link to view detail information about current grid record. The information is displayed in the [Blazor Form Layout](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxFormLayout).
+
+#### Documentation
+
+[CellDisplayTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridDataColumn.CellDisplayTemplate)

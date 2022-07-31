@@ -3,18 +3,6 @@
 @inject WeatherForecastService ForecastService
 @using GridShowDetailInformation.Data
 
-<style>
-    .DetailFormLayout {
-        width: 270px;
-    }
-    .DetailFormLayout .dxbs-fl-gd.col-md-12 {
-        margin: 0px;
-    }
-    .MainGrid th {
-        pointer-events: none;
-    }
-</style>
-
 @if (forecasts == null) {
     <h1>Loading...</h1>
 }
@@ -22,7 +10,7 @@ else {
     <p>Show forecast for the specific date:</p>
     <div style="display:flex;">
         <div style="width:350px;">
-            <DxGrid Data=@forecasts CssClass="MainGrid">
+            <DxGrid Data=@forecasts>
                 <Columns>
                     <DxGridDataColumn FieldName="Date" Width="200px" DisplayFormat="MM/dd/yyyy"></DxGridDataColumn>
                     <DxGridDataColumn FieldName="Date" Caption="Details">
@@ -35,7 +23,6 @@ else {
             </DxGrid>
         </div>
         @if (forecast != null) {
-
             <DxFormLayout CssClass="DetailFormLayout">
                 <DxFormLayoutGroup Caption=@caption>
                     <DxFormLayoutItem Caption="Temp. (C):" ColSpanMd="12">
@@ -73,3 +60,8 @@ else {
     }
 }
 
+<style>
+    .DetailFormLayout .dxbs-fl-gd.col-md-12 {
+        margin: 0px;
+    }
+</style>

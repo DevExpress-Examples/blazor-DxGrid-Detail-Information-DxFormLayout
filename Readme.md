@@ -3,14 +3,18 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T802161)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [Index.razor](./CS/DataGridShowDetailInformation/Pages/Index.razor)
+### Blazor Grid - How to show detail information in DxFormLayout
+
+
+This example demonstrates how to add the [Blazor Grid](https://docs.devexpress.com/Blazor/403143/grid) to an application and create a template grid column that shows the **Show Details** link. Users can click this link to view detail information about the current grid record. The information is displayed in the [Blazor Form Layout](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxFormLayout).
+
+<!-- default file list -->
+#### Files to look at:
+
+* [Index.razor](./CS/GridShowDetailInformation/Pages/Index.razor)
 <!-- default file list end -->
 
-### Blazor Data Grid - How to show a detail infromation in DxFormLayout
+#### Documentation
 
-The Data Grid was moved to maintenance support mode. No new features/capabilities will be added to this component. We recommend that you [migrate](https://docs.devexpress.com/Blazor/403162/grid/migrate-from-data-grid-to-grid) to the [Grid](https://docs.devexpress.com/Blazor/403143/grid) component. 
-
-This example illustrates how to create DxDataGrid for Blazor, add a template column with a button and show some detail information about the current record in DxFormLayout.
+[CellDisplayTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridDataColumn.CellDisplayTemplate)

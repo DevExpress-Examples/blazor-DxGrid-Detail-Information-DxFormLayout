@@ -48,9 +48,8 @@ else {
     }
 
     public void ShowDetails(GridDataColumnCellDisplayTemplateContext context) {
-        WeatherForecast dataItem = (WeatherForecast)context.DataItem;
-        forecast = forecasts.Where(e => e.Date == dataItem.Date).FirstOrDefault();
-        caption = "Forecast for " + dataItem.Date.ToShortDateString();
+        forecast = (WeatherForecast)context.DataItem;
+        caption = "Forecast for " + forecast.Date.ToShortDateString();
     }
 }
 

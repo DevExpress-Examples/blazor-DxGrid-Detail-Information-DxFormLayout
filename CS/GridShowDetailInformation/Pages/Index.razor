@@ -3,6 +3,12 @@
 @inject WeatherForecastService ForecastService
 @using GridShowDetailInformation.Data
 
+<style>
+    .my-class+* {
+        align-self: center !important;
+    }
+</style>
+
 @if (forecasts == null) {
     <h1>Loading...</h1>
 }
@@ -24,13 +30,13 @@ else {
         @if (forecast != null) {
             <DxFormLayout CssClass="DetailFormLayout" SizeMode="SizeMode.Small">
                 <DxFormLayoutGroup Caption=@caption>
-                    <DxFormLayoutItem Caption="Temp. (C):" ColSpanMd="12">
+                    <DxFormLayoutItem CaptionCssClass="my-class" Caption="Temp. (C):" ColSpanMd="12">
                             @forecast.TemperatureC
                     </DxFormLayoutItem>
-                    <DxFormLayoutItem Caption="Temp. (F):" ColSpanMd="12">
+                    <DxFormLayoutItem CaptionCssClass="my-class" Caption="Temp. (F):" ColSpanMd="12">
                             @forecast.TemperatureF
                     </DxFormLayoutItem>
-                    <DxFormLayoutItem Caption="Summary:" ColSpanMd="12">
+                    <DxFormLayoutItem CaptionCssClass="my-class" Caption="Summary:" ColSpanMd="12">
                             @forecast.Summary
                     </DxFormLayoutItem>
                 </DxFormLayoutGroup>

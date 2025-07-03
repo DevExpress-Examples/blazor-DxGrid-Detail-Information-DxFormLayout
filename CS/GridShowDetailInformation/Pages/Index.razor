@@ -28,19 +28,21 @@ else {
             </DxGrid>
         </div>
         @if (forecast != null) {
-            <DxFormLayout CssClass="DetailFormLayout" SizeMode="SizeMode.Small">
-                <DxFormLayoutGroup Caption=@caption>
-                    <DxFormLayoutItem CaptionCssClass="my-class" Caption="Temp. (C):" ColSpanMd="12">
+            <div class="card ms-1">
+                <DxFormLayout CssClass="DetailFormLayout">
+                    <DxFormLayoutGroup Caption=@caption>
+                        <DxFormLayoutItem CaptionCssClass="my-class" Caption="Temp. (C):" ColSpanMd="12">
                             @forecast.TemperatureC
-                    </DxFormLayoutItem>
-                    <DxFormLayoutItem CaptionCssClass="my-class" Caption="Temp. (F):" ColSpanMd="12">
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem CaptionCssClass="my-class" Caption="Temp. (F):" ColSpanMd="12">
                             @forecast.TemperatureF
-                    </DxFormLayoutItem>
-                    <DxFormLayoutItem CaptionCssClass="my-class" Caption="Summary:" ColSpanMd="12">
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem CaptionCssClass="my-class" Caption="Summary:" ColSpanMd="12">
                             @forecast.Summary
-                    </DxFormLayoutItem>
-                </DxFormLayoutGroup>
-            </DxFormLayout>
+                        </DxFormLayoutItem>
+                    </DxFormLayoutGroup>
+                </DxFormLayout>
+            </div>
         }
     </div>
 }
